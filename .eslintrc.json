@@ -1,0 +1,63 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "react/jsx-indent": "off",
+        "no-nested-ternary": "off",
+        "no-unused-vars": "off",
+        "no-undef": "off",
+        "react/jsx-wrap-multilines": "off",
+        "function-paren-newline": "off",
+        "implicit-arrow-linebreak": "off",
+        "react/button-has-type": "off",
+        "operator-linebreak": "off",
+        "indent": "off",
+        "import/prefer-default-export": "off",
+        "arrow-body-style": "off",
+        "react/require-default-props": "off",
+        "react/jsx-one-expression-per-line": "off",
+        "object-curly-newline": "off",
+        "jsx-a11y/label-has-associated-control": "off",
+        "import/no-extraneous-dependencies": ["error",  {"devDependencies": true}],
+        "react/jsx-props-no-spreading": "off",
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": ["error"],
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx"]} ],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never"
+            }
+            ]
+    },
+    "settings": {
+        "import/resolver": {
+        "typescript": {}
+        }
+        }
+}
