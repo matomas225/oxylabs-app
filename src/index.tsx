@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Normalize } from 'styled-normalize';
 import { ToastContainer } from 'react-toastify';
-import { CookiesProvider } from 'react-cookie';
 import App from './App';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -28,9 +27,7 @@ ReactDOM.render(
       `}
     />
     <Normalize />
-    <CookiesProvider>
-      <App />
-    </CookiesProvider>
+    <App />
   </BrowserRouter>,
   document.getElementById('root'),
 );

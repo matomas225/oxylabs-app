@@ -1,6 +1,5 @@
 import { css } from '@emotion/react';
 import React from 'react';
-import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 import colors from '../../Configs/Colors';
 import { fontSize } from '../../Configs/Fonts';
@@ -38,12 +37,11 @@ const styles = {
 };
 
 function Navigation() {
-  const [, removeCookie] = useCookies(['x-access-token']);
-
   const navigate = useNavigate();
 
   const Logout = () => {
-    removeCookie('x-access-token', []);
+    document.cookie = 'x-access-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+
     navigate('/');
   };
 

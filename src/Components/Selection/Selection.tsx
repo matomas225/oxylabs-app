@@ -16,28 +16,23 @@ interface SelectionProps {
 }
 
 function Selection({ selectSorting, option }: SelectionProps) {
-  const handleClick = (choise: string) => {
-    selectSorting(choise);
+  const handleClick = (event: React.MouseEvent<HTMLSelectElement>) => {
+    const target = event.target as HTMLButtonElement;
+    selectSorting(target.value);
   };
 
   return (
     <div>
-      <select css={styles.selection} name="cars" id="cars">
-        {option === '' && (
-          <option onClick={() => handleClick('')}>Sort By: Default</option>
-        )}
-        <option onClick={() => handleClick('sortAscendingDistance')}>
+      <select css={styles.selection} onClick={handleClick}>
+        {option === '' && <option value="">Sort By: Default</option>}
+        <option value="sortAscendingDistance">
           Sort By Distance: Ascending
         </option>
-        <option onClick={() => handleClick('sortDescendingDistance')}>
+        <option value="sortDescendingDistance">
           Sort By Distance: Descending
         </option>
-        <option onClick={() => handleClick('sortAscendingName')}>
-          Sort By Name: Ascending
-        </option>
-        <option onClick={() => handleClick('sortDescendingName')}>
-          Sort By Name: Descending
-        </option>
+        <option value="sortAscendingName">Sort By Name: Ascending</option>
+        <option value="sortDescendingName">Sort By Name: Descending</option>
       </select>
     </div>
   );
